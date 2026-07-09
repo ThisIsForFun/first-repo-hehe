@@ -2,32 +2,107 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout>
-  <header class="site-header">
-    <h1>The Interactive Experience</h1>
-    <p>A non-traditional collection of entries, projects, and processes.</p>
-  </header>
+<Layout title="Who's playing?">
+  <div class="login-container">
+    <div class="logo">
+      <h2>STEAM</h2> 
+    </div>
+    
+    <h1>Who's playing?</h1>
+    
+    <div class="user-grid">
+      <a href="/dashboard" class="user-card">
+        <div class="avatar">
+           <img src="https://placehold.co/150x150/2a475e/c7d5e0?text=You" alt="Your Profile" />
+        </div>
+      </a>
 
-  <main class="creative-grid">
-    <!-- Entry 1: Professional / Technical -->
-    <article class="grid-card highlight-card">
-      <h2>Data Storytelling & Strategy</h2>
-      <p>Visualizing custom deployment processes and automating project logs using Power BI and JSON workflows.</p>
-      <a href="/bi-strategy">Explore the process &rarr;</a>
-    </article>
+      <button class="user-card add-btn" id="joke-btn">
+        <div class="avatar add-icon">+</div>
+      </button>
+    </div>
 
-    <!-- Entry 2: Long-term Planning -->
-    <article class="grid-card">
-      <h2>Flight Training Master Plan</h2>
-      <p>Strategic timelines and milestones for obtaining a private pilot's license.</p>
-      <a href="/flight-log">View the log &rarr;</a>
-    </article>
-
-    <!-- Entry 3: Hands-on Projects -->
-    <article class="grid-card">
-      <h2>Vintage Leather Restoration</h2>
-      <p>Step-by-step procedures for restoring equipment using saddle soap and lanolin.</p>
-      <a href="/restoration">See the transformation &rarr;</a>
-    </article>
-  </main>
+    <p id="joke-msg" class="hidden-msg">That was a joke. I'm too lazy to code another user.</p>
+  </div>
 </Layout>
+
+<script>
+  // This makes the joke button work without reloading the page
+  const jokeBtn = document.getElementById('joke-btn');
+  const jokeMsg = document.getElementById('joke-msg');
+  
+  if (jokeBtn && jokeMsg) {
+    jokeBtn.addEventListener('click', () => {
+      jokeMsg.style.display = 'block';
+    });
+  }
+</script>
+
+<style>
+  .login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: radial-gradient(circle at center, #2a475e 0%, #171a21 100%);
+  }
+
+  .logo { margin-bottom: 2rem; color: white; }
+
+  h1 {
+    font-size: 2.5rem;
+    font-weight: 500;
+    color: white;
+    margin-bottom: 3rem;
+  }
+
+  .user-grid {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+  }
+
+  .user-card {
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+
+  .user-card:hover {
+    transform: scale(1.05);
+  }
+
+  .avatar {
+    width: 150px;
+    height: 150px;
+    border: 2px solid transparent;
+  }
+  
+  .avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .user-card:hover .avatar {
+    border-color: var(--steam-text);
+  }
+
+  .add-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 5rem;
+    color: var(--steam-text);
+  }
+
+  .hidden-msg {
+    display: none;
+    margin-top: 3rem;
+    color: #ed4245; /* Red error color */
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+</style>

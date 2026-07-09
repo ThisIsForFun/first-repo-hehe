@@ -1,0 +1,163 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+// This acts as a database for your entries so you only have to type them once
+const entries = [
+  { id: 1, title: "One", thumb: "https://placehold.co/300x450/461220/fff?text=Cover+1", link: "#" },
+  { id: 2, title: "Two", thumb: "https://placehold.co/300x450/8c2f39/fff?text=Cover+2", link: "#" },
+  { id: 3, title: "Three", thumb: "https://placehold.co/300x450/b23a48/fff?text=Cover+3", link: "#" },
+  { id: 4, title: "Four", thumb: "https://placehold.co/300x450/fcb9b2/333?text=Cover+4", link: "#" },
+];
+---
+
+<Layout title="LIBRARY">
+  <header class="steam-ribbon">
+    <div class="nav-arrows">
+      <a href="/">&larr;</a>
+      <a href="#" class="disabled">&rarr;</a>
+    </div>
+    <nav class="main-nav">
+      <a href="/upcoming">UPCOMING</a>
+      <a href="/dashboard" class="active">PLAYED</a>
+      <a href="/what">WHAT ARE WE DOING HERE AGAIN?</a>
+    </nav>
+  </header>
+
+  <div class="app-layout">
+    
+    <aside class="sidebar">
+      <div class="search-bar">
+        <input type="text" placeholder="Search..." />
+      </div>
+      <ul class="game-list">
+        {entries.map((entry) => (
+          <li><a href={entry.link}>{entry.title}</a></li>
+        ))}
+      </ul>
+    </aside>
+
+    <main class="library-grid">
+      <h2>Recent Entries</h2>
+      <div class="thumbnails">
+         {entries.map((entry) => (
+          <a href={entry.link} class="game-card">
+             <img src={entry.thumb} alt={entry.title} />
+          </a>
+        ))}
+      </div>
+    </main>
+    
+  </div>
+</Layout>
+
+<style>
+  /* Ribbon Styling */
+  .steam-ribbon {
+    background-color: var(--steam-header-bg);
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    border-bottom: 1px solid #2a475e;
+  }
+
+  .nav-arrows a {
+    color: var(--steam-text);
+    font-size: 1.5rem;
+    margin-right: 0.5rem;
+  }
+  .nav-arrows .disabled { color: #3a4048; cursor: not-allowed; }
+
+  .main-nav {
+    display: flex;
+    gap: 2rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+  }
+
+  .main-nav a {
+    color: var(--steam-text);
+    padding-bottom: 0.5rem;
+    transition: color 0.2s;
+  }
+
+  .main-nav a:hover { color: white; }
+
+  /* The active tab with blue text and underline */
+  .main-nav a.active {
+    color: var(--steam-blue);
+    border-bottom: 3px solid var(--steam-blue);
+  }
+
+  /* Two-Column App Layout */
+  .app-layout {
+    display: flex;
+    height: calc(100vh - 70px);
+  }
+
+  /* Sidebar Styling */
+  .sidebar {
+    width: 300px;
+    background-color: #2a2d33;
+    padding: 1rem;
+    overflow-y: auto;
+  }
+
+  .search-bar input {
+    width: 100%;
+    padding: 0.5rem;
+    background: #171a21;
+    border: none;
+    color: white;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+  }
+
+  .game-list { list-style: none; }
+  
+  .game-list li a {
+    display: block;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.9rem;
+  }
+  .game-list li a:hover {
+    background: #3a4048;
+    color: white;
+  }
+
+  /* Main Grid Window Styling */
+  .library-grid {
+    flex: 1;
+    padding: 2rem;
+    background: linear-gradient(to bottom, #1b2838 0%, #171a21 100%);
+    overflow-y: auto;
+  }
+
+  h2 {
+    color: white;
+    margin-bottom: 1rem;
+    font-weight: 400;
+  }
+
+  .thumbnails {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .game-card {
+    display: block;
+    width: 200px;
+    transition: transform 0.2s, outline 0.2s;
+  }
+
+  .game-card img {
+    width: 100%;
+    border-radius: 4px;
+  }
+
+  .game-card:hover {
+    transform: scale(1.02);
+    outline: 2px solid white;
+  }
+</style>
