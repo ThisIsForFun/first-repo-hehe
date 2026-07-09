@@ -1,11 +1,33 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
-	<Welcome />
+  <header class="site-header">
+    <h1>The Interactive Experience</h1>
+    <p>A non-traditional collection of entries, projects, and processes.</p>
+  </header>
+
+  <main class="creative-grid">
+    <!-- Entry 1: Professional / Technical -->
+    <article class="grid-card highlight-card">
+      <h2>Data Storytelling & Strategy</h2>
+      <p>Visualizing custom deployment processes and automating project logs using Power BI and JSON workflows.</p>
+      <a href="/bi-strategy">Explore the process &rarr;</a>
+    </article>
+
+    <!-- Entry 2: Long-term Planning -->
+    <article class="grid-card">
+      <h2>Flight Training Master Plan</h2>
+      <p>Strategic timelines and milestones for obtaining a private pilot's license.</p>
+      <a href="/flight-log">View the log &rarr;</a>
+    </article>
+
+    <!-- Entry 3: Hands-on Projects -->
+    <article class="grid-card">
+      <h2>Vintage Leather Restoration</h2>
+      <p>Step-by-step procedures for restoring equipment using saddle soap and lanolin.</p>
+      <a href="/restoration">See the transformation &rarr;</a>
+    </article>
+  </main>
 </Layout>
