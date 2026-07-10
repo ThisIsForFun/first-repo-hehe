@@ -1,0 +1,251 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+// We keep the entries list here so the left sidebar keeps working!
+const entries = [
+  { id: 1, title: "My First Project", thumb: "/game-cover.jpg", link: "/project-one" },
+  { id: 2, title: "Two", thumb: "/another-image.jpg", link: "#" },
+  { id: 3, title: "Three", thumb: "/third-image.png", link: "#" },
+  { id: 4, title: "Four", thumb: "https://placehold.co/300x450/fcb9b2/333?text=Cover+4", link: "#" },
+];
+---
+
+<Layout title="LIBRARY | Project One">
+  <header class="steam-ribbon">
+    <div class="nav-arrows">
+      <a href="/dashboard">&larr;</a>
+      <a href="#" class="disabled">&rarr;</a>
+    </div>
+    <nav class="main-nav">
+      <a href="/upcoming">UPCOMING</a>
+      <a href="/dashboard" class="active">PLAYED</a>
+      <a href="/what">WHAT ARE WE DOING HERE AGAIN?</a>
+    </nav>
+  </header>
+
+  <div class="app-layout">
+    
+    <aside class="sidebar">
+      <div class="search-bar">
+        <input type="text" placeholder="Search..." />
+      </div>
+      <ul class="game-list">
+        {entries.map((entry) => (
+          // We add a little logic here: if the link matches this page, highlight it!
+          <li><a href={entry.link} class={entry.link === "/project-one" ? "active-game" : ""}>{entry.title}</a></li>
+        ))}
+      </ul>
+    </aside>
+
+    <main class="entry-content">
+      
+      <div class="entry-header">
+        <img src="https://placehold.co/1200x400/171a21/fff?text=Blog+Header+Image" alt="Header" class="hero-bg" />
+      </div>
+
+      <div class="action-bar">
+        
+        <a href="https://example.com" target="_blank" class="play-btn">
+          <span class="play-icon">▶</span> PLAY
+        </a>
+
+        <div class="stat-block">
+          <span class="stat-label">CLOUD STATUS</span>
+          <span class="stat-value">Published July 10, 2026</span>
+        </div>
+
+        <div class="stat-block">
+          <span class="stat-label">ACHIEVEMENTS</span>
+          <span class="stat-value">Score: 9/10</span>
+          <div class="progress-bar-bg">
+            <div class="progress-bar-fill" style="width: 90%;"></div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="activity-section">
+        <h2 class="section-title">ACTIVITY</h2>
+        
+        <div class="fake-input">
+          <p>Say something about this entry to your friends...</p>
+        </div>
+
+        <article class="blog-body">
+          <h3>The Beginning of the End</h3>
+          <p class="post-date">July 10</p>
+          
+          <p>This is where you write your actual blog post! Because you are writing in HTML, you can structure this however you want.</p>
+          
+          <p>You can add paragraphs, insert <a href="#">links</a>, or even drop more images directly into your text like this:</p>
+          
+          <img src="https://placehold.co/600x300/2a475e/fff?text=In-text+Image" alt="Post detail" />
+          
+          <p>The layout mimics the Steam news feed, giving it that perfect desktop app feel while still being highly readable.</p>
+        </article>
+      </div>
+
+    </main>
+  </div>
+</Layout>
+
+<style>
+  /* Keep Ribbon and Sidebar CSS identical to Dashboard */
+  .steam-ribbon { background-color: var(--steam-header-bg); padding: 1rem 2rem; display: flex; align-items: center; gap: 2rem; border-bottom: 1px solid #2a475e; }
+  .nav-arrows a { color: var(--steam-text); font-size: 1.5rem; margin-right: 0.5rem; }
+  .nav-arrows .disabled { color: #3a4048; cursor: not-allowed; }
+  .main-nav { display: flex; gap: 2rem; font-size: 1.1rem; font-weight: 500; }
+  .main-nav a { color: var(--steam-text); padding-bottom: 0.5rem; transition: color 0.2s; }
+  .main-nav a:hover { color: white; }
+  .main-nav a.active { color: var(--steam-blue); border-bottom: 3px solid var(--steam-blue); }
+  .app-layout { display: flex; height: calc(100vh - 70px); }
+  .sidebar { width: 300px; background-color: #2a2d33; padding: 1rem; overflow-y: auto; }
+  .search-bar input { width: 100%; padding: 0.5rem; background: #171a21; border: none; color: white; border-radius: 4px; margin-bottom: 1rem; }
+  .game-list { list-style: none; }
+  .game-list li a { display: block; padding: 0.25rem 0.5rem; font-size: 0.9rem; color: var(--steam-text); }
+  .game-list li a:hover { background: #3a4048; color: white; }
+  .game-list li a.active-game { background: #66c0f4; color: #171a21; font-weight: bold; }
+
+  /* Entry Main Content Area */
+  .entry-content {
+    flex: 1;
+    background: #171a21; /* Slightly darker than library background */
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Header Image with gradient fade */
+  .entry-header {
+    width: 100%;
+    height: 350px;
+    position: relative;
+  }
+  .entry-header img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+  }
+
+  /* Action Bar (Play Button, Date, Score) */
+  .action-bar {
+    display: flex;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(5px);
+    margin-top: -60px; /* Pulls it up over the faded image */
+    z-index: 10;
+    gap: 3rem;
+  }
+
+  .play-btn {
+    background: linear-gradient(to right, #75b022 5%, #588a1b 95%);
+    color: white;
+    padding: 0.8rem 3rem;
+    border-radius: 2px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: filter 0.2s;
+  }
+  .play-btn:hover {
+    filter: brightness(1.2);
+    text-decoration: none;
+  }
+  .play-icon { font-size: 1rem; }
+
+  .stat-block {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+  .stat-label {
+    color: #8f98a0;
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+  }
+  .stat-value {
+    color: #c6d4df;
+    font-size: 0.9rem;
+  }
+
+  /* Mini Progress bar for Score */
+  .progress-bar-bg {
+    width: 150px;
+    height: 4px;
+    background: #2a2f35;
+    margin-top: 4px;
+    border-radius: 2px;
+  }
+  .progress-bar-fill {
+    height: 100%;
+    background: #66c0f4;
+    border-radius: 2px;
+  }
+
+  /* Activity / Blog Section */
+  .activity-section {
+    padding: 2rem;
+    max-width: 900px;
+  }
+
+  .section-title {
+    color: white;
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+  }
+
+  .fake-input {
+    background: #2a2d33;
+    padding: 1rem;
+    border-radius: 4px;
+    margin-bottom: 2rem;
+    color: #8f98a0;
+    font-size: 0.9rem;
+    cursor: text;
+  }
+
+  .blog-body {
+    background: #1e2329;
+    padding: 2rem;
+    border-radius: 4px;
+    color: #c6d4df;
+  }
+
+  .blog-body h3 {
+    color: white;
+    font-size: 1.5rem;
+    margin-bottom: 0.2rem;
+  }
+  .post-date {
+    font-size: 0.8rem;
+    color: #8f98a0;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+  }
+
+  .blog-body p {
+    line-height: 1.6;
+    margin-bottom: 1.2rem;
+  }
+  .blog-body a {
+    color: #66c0f4;
+  }
+  .blog-body a:hover {
+    text-decoration: underline;
+  }
+  
+  .blog-body img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin: 1rem 0;
+  }
+</style>
