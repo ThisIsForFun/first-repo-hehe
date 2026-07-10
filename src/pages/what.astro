@@ -6,19 +6,28 @@ import Layout from '../layouts/Layout.astro';
 const recentActivity = [
   {
     type: "New Entry",
-    title: "The Beginning of the End",
+    title: "Settlers of Catan",
     thumb: "https://placehold.co/200x90/2a475e/fff?text=Blog+Thumb",
     statLabel: "Published on",
-    statValue: "10 Jul", // Current date vibe!
+    statValue: "8 Jul", // Current date vibe!
     progress: "100%",
     link: "/entry-one"
   },
   {
     type: "Upcoming Game Added",
-    title: "Sons Of The Forest",
+    title: "Slay the Princess",
     thumb: "https://placehold.co/200x90/171a21/fff?text=Upcoming+Thumb",
     statLabel: "Status",
-    statValue: "Wishlisted",
+    statValue: "To Play",
+    progress: "0%",
+    link: "/upcoming"
+  }
+    {
+    type: "Upcoming Game Added",
+    title: "Codenames",
+    thumb: "https://placehold.co/200x90/171a21/fff?text=Upcoming+Thumb",
+    statLabel: "Status",
+    statValue: "To Play",
     progress: "0%",
     link: "/upcoming"
   }
@@ -49,15 +58,14 @@ const recentActivity = [
         
         <div class="profile-info">
           <div class="name-row">
-            <h1>boogieliciousrules <span class="dropdown">▼</span></h1>
+            <h1>Ella QU <span class="dropdown">▼</span></h1>
             <div class="level-badge">
               <span class="level-text">Level</span>
-              <span class="level-num">10</span>
+              <span class="level-num">1</span>
             </div>
           </div>
           <div class="profile-actions">
             <p class="tagline">"I plan on putting a header image here eventually..."</p>
-            <button class="edit-btn">Edit Profile</button>
           </div>
         </div>
       </header>
@@ -66,7 +74,7 @@ const recentActivity = [
         
         <section class="showcase-section">
           <div class="showcase-header">
-            <h2>Custom Info Showcase</h2>
+            <h2>About this Blog</h2>
           </div>
           <div class="showcase-content">
             <h3>So, what are we doing here again?</h3>
@@ -82,7 +90,7 @@ const recentActivity = [
         <section class="activity-section">
           <div class="activity-header-bar">
             <h2>Recent Activity</h2>
-            <span class="playtime">0 hours past 2 weeks</span>
+            <span class="playtime">Past 2 weeks</span>
           </div>
           
           <div class="activity-list">
@@ -173,8 +181,6 @@ const recentActivity = [
 
   .profile-actions { display: flex; justify-content: space-between; align-items: flex-end; padding-top: 1rem; }
   .tagline { color: #8f98a0; font-style: italic; }
-  .edit-btn { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: white; padding: 0.4rem 1rem; border-radius: 2px; cursor: pointer; transition: background 0.2s; }
-  .edit-btn:hover { background: rgba(255,255,255,0.2); }
 
   /* 2. Body Area (Single Column) */
   .profile-body {
