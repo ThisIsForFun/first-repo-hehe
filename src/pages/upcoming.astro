@@ -1,0 +1,359 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+// This is your database for the Upcoming slider.
+// You can add as many as you want; the slider will automatically adjust!
+const upcomingGames = [
+  {
+    id: 1,
+    title: "Sons Of The Forest", // Change to your upcoming project/game
+    mainImg: "https://placehold.co/600x350/0b141d/fff?text=Main+Banner+1",
+    screenshots: [
+      "https://placehold.co/140x80/171a21/fff?text=Snap+1",
+      "https://placehold.co/140x80/171a21/fff?text=Snap+2",
+      "https://placehold.co/140x80/171a21/fff?text=Snap+3",
+      "https://placehold.co/140x80/171a21/fff?text=Snap+4"
+    ],
+    tags: ["Base Building", "Building", "Survival", "Co-op"],
+    price: "P910.00" // Or change this to a date like "Coming May 2026"
+  },
+  {
+    id: 2,
+    title: "Flight Training Arc", 
+    mainImg: "https://placehold.co/600x350/1b2838/fff?text=Main+Banner+2",
+    screenshots: [
+      "https://placehold.co/140x80/2a475e/fff?text=Snap+1",
+      "https://placehold.co/140x80/2a475e/fff?text=Snap+2",
+      "https://placehold.co/140x80/2a475e/fff?text=Snap+3",
+      "https://placehold.co/140x80/2a475e/fff?text=Snap+4"
+    ],
+    tags: ["Aviation", "Study", "Milestone"],
+    price: "In Progress"
+  },
+  {
+    id: 3,
+    title: "Secret Project 3", 
+    mainImg: "https://placehold.co/600x350/171d25/fff?text=Main+Banner+3",
+    screenshots: [
+      "https://placehold.co/140x80/0f1922/fff?text=Snap+1",
+      "https://placehold.co/140x80/0f1922/fff?text=Snap+2",
+      "https://placehold.co/140x80/0f1922/fff?text=Snap+3",
+      "https://placehold.co/140x80/0f1922/fff?text=Snap+4"
+    ],
+    tags: ["Mystery", "To Be Announced"],
+    price: "TBA"
+  }
+];
+---
+
+<Layout title="STORE | UPCOMING">
+  <!-- The Top Ribbon -->
+  <header class="steam-ribbon">
+    <div class="nav-arrows">
+      <a href="/dashboard">&larr;</a>
+      <a href="#" class="disabled">&rarr;</a>
+    </div>
+    <nav class="main-nav">
+      <!-- UPCOMING is now the active tab -->
+      <a href="/upcoming" class="active">UPCOMING</a>
+      <a href="/dashboard">PLAYED</a>
+      <a href="/what">WHAT ARE WE DOING HERE AGAIN?</a>
+    </nav>
+  </header>
+
+  <!-- Store Layout Container -->
+  <main class="store-body">
+    
+    <!-- 1. The Header Image (Banner Ad) -->
+    <div class="store-banner">
+      <!-- REPLACE THIS with your banner image -->
+      <img src="https://placehold.co/1200x200/171a21/66c0f4?text=YOUR+HEADER+IMAGE+HERE" alt="Header Banner" />
+    </div>
+
+    <!-- 2. The Carousel Section -->
+    <section class="featured-section">
+      <h2>Featured & Recommended</h2>
+      
+      <div class="carousel-wrapper">
+        <!-- Left Arrow -->
+        <button id="prev-btn" class="arrow-btn left-arrow">&lt;</button>
+
+        <div class="carousel-container">
+          {upcomingGames.map((game, index) => (
+            // Only the first item gets the 'active' class on load
+            <div class={`carousel-item ${index === 0 ? 'active' : ''}`} data-index={index}>
+              
+              <!-- Left side: Big Image -->
+              <div class="main-image">
+                <img src={game.mainImg} alt={game.title} />
+              </div>
+              
+              <!-- Right side: Details -->
+              <div class="game-info">
+                <h3>{game.title}</h3>
+                
+                <div class="screenshots-grid">
+                  {game.screenshots.map(snap => (
+                    <img src={snap} alt="Thumbnail" />
+                  ))}
+                </div>
+                
+                <div class="meta-data">
+                  <p class="recommendation">Recommended because you played games tagged with</p>
+                  <div class="tags">
+                    {game.tags.map(tag => (
+                      <span class="tag">{tag}</span>
+                    ))}
+                  </div>
+                  <div class="price-row">
+                    <span>{game.price}</span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          ))}
+        </div>
+
+        <!-- Right Arrow -->
+        <button id="next-btn" class="arrow-btn right-arrow">&gt;</button>
+      </div>
+
+      <!-- 3. The Page Indicator Dots -->
+      <div class="carousel-dots">
+        {upcomingGames.map((_, index) => (
+          <span class={`dot ${index === 0 ? 'active' : ''}`} data-index={index}></span>
+        ))}
+      </div>
+
+    </section>
+  </main>
+</Layout>
+
+<!-- JavaScript to make the Slider Interactive -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const items = document.querySelectorAll('.carousel-item');
+    const dots = document.querySelectorAll('.dot');
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
+    
+    let currentIndex = 0;
+    const totalItems = items.length;
+
+    function showItem(index) {
+      // Remove active class from all items and dots
+      items.forEach(item => item.classList.remove('active'));
+      dots.forEach(dot => dot.classList.remove('active'));
+      
+      // Add active class to the current one
+      items[index].classList.add('active');
+      dots[index].classList.add('active');
+    }
+
+    if (prevBtn && nextBtn) {
+      prevBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex === 0) ? totalItems - 1 : currentIndex - 1;
+        showItem(currentIndex);
+      });
+
+      nextBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex === totalItems - 1) ? 0 : currentIndex + 1;
+        showItem(currentIndex);
+      });
+    }
+
+    // Allow clicking on the dots to jump to a page
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => {
+        currentIndex = index;
+        showItem(currentIndex);
+      });
+    });
+  });
+</script>
+
+<!-- CSS Styling -->
+<style>
+  /* Ribbon Styling (Same as Dashboard to keep consistency) */
+  .steam-ribbon {
+    background-color: var(--steam-header-bg);
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    border-bottom: 1px solid #2a475e;
+  }
+  .nav-arrows a { color: var(--steam-text); font-size: 1.5rem; margin-right: 0.5rem; }
+  .nav-arrows .disabled { color: #3a4048; cursor: not-allowed; }
+  .main-nav { display: flex; gap: 2rem; font-size: 1.1rem; font-weight: 500; }
+  .main-nav a { color: var(--steam-text); padding-bottom: 0.5rem; transition: color 0.2s; }
+  .main-nav a:hover { color: white; }
+  .main-nav a.active { color: var(--steam-blue); border-bottom: 3px solid var(--steam-blue); }
+
+  /* Store Background */
+  .store-body {
+    background: #1b2838;
+    min-height: calc(100vh - 70px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 4rem;
+  }
+
+  /* Banner Image */
+  .store-banner {
+    width: 100%;
+    max-width: 1200px;
+    margin-bottom: 2rem;
+  }
+  .store-banner img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* Featured Section */
+  .featured-section {
+    width: 100%;
+    max-width: 980px;
+  }
+  
+  .featured-section h2 {
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+  }
+
+  /* Carousel Layout */
+  .carousel-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  .carousel-container {
+    background: #0f1922;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    flex: 1;
+    overflow: hidden;
+  }
+
+  .carousel-item {
+    display: none; /* Hide all by default */
+  }
+  
+  .carousel-item.active {
+    display: flex; /* Only show the active one */
+    animation: fadeIn 0.4s ease-in-out;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  /* Inner Card Structure */
+  .main-image {
+    flex: 2;
+  }
+  .main-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .game-info {
+    flex: 1;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .game-info h3 {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+  }
+
+  .screenshots-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .screenshots-grid img {
+    width: 100%;
+    height: auto;
+    border-radius: 2px;
+  }
+
+  .meta-data .recommendation {
+    font-size: 0.75rem;
+    color: #61686D;
+    margin-bottom: 0.5rem;
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .tag {
+    background: #384F66;
+    color: #66c0f4;
+    font-size: 0.7rem;
+    padding: 0.2rem 0.4rem;
+    border-radius: 2px;
+  }
+
+  .price-row {
+    text-align: right;
+    color: #c6d4df;
+    font-size: 0.9rem;
+  }
+
+  /* Arrows */
+  .arrow-btn {
+    background: rgba(0, 0, 0, 0.4);
+    border: none;
+    color: white;
+    font-size: 3rem;
+    cursor: pointer;
+    padding: 1rem 0.5rem;
+    transition: background 0.2s, transform 0.2s;
+    position: absolute;
+    z-index: 10;
+  }
+  .arrow-btn:hover { background: rgba(0, 0, 0, 0.8); transform: scale(1.1); }
+  .left-arrow { left: -40px; }
+  .right-arrow { right: -40px; }
+
+  /* Dots underneath */
+  .carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.4rem;
+    margin-top: 1rem;
+  }
+
+  .dot {
+    width: 15px;
+    height: 9px;
+    background: #3a4048;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+
+  .dot.active, .dot:hover {
+    background: #626972;
+  }
+</style>
