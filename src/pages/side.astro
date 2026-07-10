@@ -1,0 +1,92 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="COMMUNITY | Side Stories">
+  <!-- The Top Ribbon -->
+  <header class="steam-ribbon">
+    <div class="nav-arrows">
+      <a href="/dashboard">&larr;</a>
+      <a href="#" class="disabled">&rarr;</a>
+    </div>
+    <nav class="main-nav">
+      <a href="/upcoming">UPCOMING</a>
+      <a href="/dashboard">PLAYED</a>
+      <a href="/side">*Side Stories*</a>
+      <a href="/what">WHAT ARE WE DOING HERE AGAIN?</a>
+    </nav>
+  </header>
+
+  <!-- Main Canvas -->
+  <main class="profile-background">
+    <div class="content-container">
+      
+      <div class="header-banner">
+        <h2>*Side Stories</h2>
+        <p>A collection of side quests, random thoughts, and tangents.</p>
+      </div>
+
+      <!-- YOU CAN BUILD YOUR NEW LAYOUT HERE -->
+      <div class="canvas-area">
+        <p>This is your blank slate! You can add a grid of images, a list of text entries, or just write out your stories right here.</p>
+      </div>
+
+    </div>
+  </main>
+</Layout>
+
+<style>
+  /* Keep Ribbon CSS identical */
+  .steam-ribbon { background-color: var(--steam-header-bg); padding: 1rem 2rem; display: flex; align-items: center; gap: 2rem; border-bottom: 1px solid #2a475e; }
+  .nav-arrows a { color: var(--steam-text); font-size: 1.5rem; margin-right: 0.5rem; }
+  .nav-arrows .disabled { color: #3a4048; cursor: not-allowed; }
+  .main-nav { display: flex; gap: 2rem; font-size: 1.1rem; font-weight: 500; }
+  .main-nav a { color: var(--steam-text); padding-bottom: 0.5rem; transition: color 0.2s; }
+  .main-nav a:hover { color: white; }
+  .main-nav a.active { color: var(--steam-blue); border-bottom: 3px solid var(--steam-blue); }
+
+  /* Background Layout */
+  .profile-background {
+    background: radial-gradient(circle at top center, #222a35 0%, #171a21 100%);
+    min-height: calc(100vh - 70px);
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+  }
+
+  .content-container {
+    width: 100%;
+    max-width: 960px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  /* Header Design */
+  .header-banner {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 4px;
+    padding: 2rem;
+  }
+
+  .header-banner h2 {
+    color: white;
+    font-size: 2rem;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+  }
+
+  .header-banner p {
+    color: #8f98a0;
+  }
+
+  /* Blank Canvas Area */
+  .canvas-area {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    padding: 2rem;
+    color: #c6d4df;
+    min-height: 400px;
+  }
+</style>
