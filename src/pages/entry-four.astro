@@ -1,16 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro';
-
-// We keep the entries list here so the left sidebar keeps working!
-const entries = [
-  { id: 1, title: "Settlers of Catan", thumb: "/colonist thumb.png", link: "/entry-one" },
-  { id: 2, title: "Balatro", thumb: "/balatro square.avif", link: "/entry-two" },
-  { id: 3, title: "9 Kings", thumb: "/9 kings thumb 1.jpg", link: "/entry-three" },
-  { id: 4, title: "Final thoughts", thumb: "https://placehold.co/300x450/fcb9b2/333?text=Coming+Soon", link: "/entry-four" },
-];
 ---
 
-<Layout title="LIBRARY | Project One">
+<Layout title="COMMUNITY | Final Thoughts">
+  <!-- The Top Ribbon -->
   <header class="steam-ribbon">
     <div class="nav-arrows">
       <a href="/dashboard">&larr;</a>
@@ -18,150 +11,31 @@ const entries = [
     </div>
     <nav class="main-nav">
       <a href="/upcoming">UPCOMING</a>
-      <a href="/dashboard" class="active">PLAYED</a>
+      <a href="/dashboard">PLAYED</a>
       <a href="/what">WHAT ARE WE DOING HERE AGAIN?</a>
-      <a href="/side">*Side Stories*</a>
     </nav>
   </header>
 
-  <div class="app-layout">
-    
-    <aside class="sidebar">
-      <div class="search-bar">
-        <input type="text" placeholder="Search..." />
-      </div>
-      <ul class="game-list">
-        {entries.map((entry) => (
-          // We add a little logic here: if the link matches this page, highlight it!
-          <li><a href={entry.link} class={entry.link === "/project-one" ? "active-game" : ""}>{entry.title}</a></li>
-        ))}
-      </ul>
-    </aside>
-
-    <main class="entry-content">
+  <!-- Main Canvas -->
+  <main class="profile-background">
+    <div class="content-container">
       
-      <div class="entry-header">
-        <img src="/colonist header.webp" alt="Header" class="hero-bg" />
+      <div class="header-banner">
+        <h2>Final Thoughts</h2>
+        <p>My concluding thoughts, verdicts, and takeaways from this AI gaming experiment.</p>
       </div>
 
-      <div class="action-bar">
-        
-        <a href="https://colonist.io/" target="_blank" class="play-btn">
-          <span class="play-icon">▶</span> PLAY
-        </a>
-
-        <div class="stat-block">
-          <span class="stat-label">CLOUD STATUS</span>
-          <span class="stat-value">Published June 30, 2026</span>
-        </div>
-
-        <div class="stat-block">
-          <span class="stat-label">ACHIEVEMENTS</span>
-          <span class="stat-value">Score: 8/10</span>
-          <div class="progress-bar-bg">
-            <div class="progress-bar-fill" style="width: 90%;"></div>
-          </div>
-        </div>
-
+      <!-- YOU CAN BUILD YOUR NEW LAYOUT HERE -->
+      <div class="canvas-area">
+        <p>This is your blank slate! You can write out your final verdict and thoughts on Gemini right here.</p>
       </div>
 
-      <div class="activity-section">
-        <h2 class="section-title">ACTIVITY</h2>
-        
-        <div class="fake-input">
-          <p>Ever heard of the game Settlers of Catan? It's fun...</p>
-        </div>
-
-        <article class="blog-body">
-         <h3 style="text-align: center;">“Why play against bots when you can BE the bot?”</h3>
-          <h3 style="text-align: center;">Takeaways on Using Gen AI to Beat Players in Settlers of Catan</h3>
-          <br>
-          <p class="post-date"; style="text-align: center;">Brought to you by Colonist.io (thats a lie, this isnt sponsored lol)
-          <br>June 30 2026</p>
-
-          <p style="text-align: center;">
-            <strong>Game:</strong> Settlers of Catan (Online Version: Colonist.io)<br>
-            <strong>Duration (i.e., Total Rounds):</strong> 6 games, approx. 25 mins each<br>
-            <strong>Target:</strong> Win 1st place in as many games as possible.
-          </p>
-          <br>
-
-          <p>Hello and welcome to my first entry for my individual AI experiment!</p>
-
-          <p>If you heard of my initial ‘Individual AI Experiment’, I decided to change that idea to make it more generally insightful and, at the same time, less labor-intensive. With that, this is my first entry for my individual AI experiment, in which I will now be playing various games with AI assistance. Essentially, of course, I will be using AI as my gaming Coach (we will figure out how that works as we go on).</p>
-
-          <p>Today’s game is something relatively simple to kick off this series. I selected Settlers of Catan. If you’ve heard of it or played it before, fantastic! If not, you totally should give it a go.</p>
-
-          <p>Given the busy schedules of my friends, I decided to use the Colonist web version of the game, so I will be playing with random people.</p>
-
-          <p>For those unfamiliar with the game: <em>“Settlers of Catan is a strategy board game where players trade resources, build roads and settlements, and expand across an island to win points.” (AI-generated)</em></p>
-
-          <p>The game board comprises multiple hexagonal tiles. Each tile represents a particular resource with an assigned number of dice from 2 to 12. Settlements (1 Victory point) allow you to collect resources from the adjacent tiles; Roads allow you to branch off from existing settlements; Cities (1 Victory point) level up to double the amount of resources collected on every dice roll; and Resources can be used to build or trade. Essentially, players want to collect resources to build on their settlements and garner more victory points. Usually, the winner of the game is whoever reaches 10 victory points.</p>
-
-          <p>In this session, I will be playing several games of Catan. In the first round, I will be playing on my own to get a general review of how the game works and with my usual tactics. From game 2 onwards, I will then be using AI (specifically Gemini Pro) to coach my gaming.</p>
-          <br>
-
-          <h3>Gameplay and Warm-Up Rounds</h3>
-
-          <p>For the first game (and all other games), I played against 3 other players in Colonist’s Casual lobbies. This queue is for casual players who aren't playing to level up their current game rating (ratings in Colonist are generally used to objectively measure how good a player is and are used to match up players of the same level). Given that I am going to be playing with an AI coach later on, I decided that the Casual lobbies would be most appropriate to play in.</p>
-
-          <p>Game 1 went by rather quickly, with me placing in 3rd out of 4. For this game, I used my usual gaming strategy of focusing on Wheat, Sheep, and Stone resources in hopes of a late-game advantage. Lacking stable sources of Wood and Brick did eventually hinder me, as those resources were necessary for expansion.</p>
-
-          <p>Before this session, my win rate was at 15% (pathetic, I know!) and ranked at Silver II with a rating of 1324.</p>
-
-          <div style="text-align: center;">
-          <img src="/colonist old win rate.png" alt="Old Win Rate" />
-          </div>
-          <br>
-
-          <h3>AI-Coached Rounds</h3>
-
-          <p>My main prompts for Gemini were mainly on Settlement placement. At the beginning of the game, each player is given the chance to put down two starting settlements on the board in a particular order. Where you place your starting settlements is important, as the adjacent resource tiles will be your sources for the majority of the game.</p>
-
-          <p>Picking an advantageous spot requires considering the variety of your resources available, as well as the probability of that respective tile number being rolled.</p>
-
-          <p>As I prompted Gemini to provide me with ideal options on where to place my settlements, I would upload an image of the board. The AI would often misread the image, sometimes wrongfully assuming particular tile resource types.</p>
-
-          <p>Out of the games I played with an AI coach, I won 4. While Coach G (Gemini) would often misread images, it did slowly show me the mathematical logic behind how it recommends particular locations as ideal. Slowly, I began to predict the locations it would recommend. The number of my prompts lowered to around 2-3 every game, mostly consisting of placement recommendations, trade-offs for particular Development cards, and recaps when I would lose a game (to incorporate the turnout/hinderances in the next recommendations).</p>
-          <br>
-
-          <div style="text-align: center;">
-          <img src="/colonist game 2 win.png" alt="Game 2 Win"/>
-          <h4>Game 2 (win)</h4>
-          </div>
-          <br>
-
-          <h3>HOW DID THIS MAKE ME FEEL??</h3>
-          <p style="font-size: 0.9rem; color: #8f98a0;"><em>(skip to this part if you are bored with the gaming terminology)</em></p>
-
-          <p>Playing the game with Gemini was an interesting experience. While I had learned several new strategies on how to play the game, there definitely were a couple of downsides to working with an AI coach.</p>
-
-          <p>Firstly, going back and forth to consult with Gemini between my turns was a bit hectic. Especially when I would be playing faster-paced players, an additional step of coordinating with the AI definitely added stress and deducted time from my limited seconds count. You would think that with the AI, thinking would be more efficient, but it actually felt like the opposite. The added steps of screenshots and typing, just to get the answer you were already thinking, definitely heightened my perceived intensity of the game.</p>
-
-          <p>Additionally, the distraction that comes with coordinating with the AI decreased my overall enjoyment of the game. The more time I spent prompting and clarifying suggestions meant less time focusing on the game itself. In the first few games, I was prompting more often between turns, so I felt like the executor of the AI’s intentions, rather than a player of the game in my own right. In the latter games, however, I decided to prompt less and trust my own instincts more.</p>
-
-          <p>In conclusion, Gemini did teach me a couple of new strategies that I wasn't aware of, which I’ll definitely keep in mind for future games. However, going from a 15% to an 80% win rate means relatively little to me if it means I get to enjoy the game less. Overall, playing Settlers of Catan with Coach G is in the same category as bungee jumping for me; you try it once and never do it again.</p>
-          <br>
-
-          <h3>THE VERDICT</h3>
-          <br>
-          <p>
-            <strong>Strategies Learned:</strong> 4/5 🏆🏆🏆🏆 
-            <br><strong>Happiness rating while playing the game:</strong> 3/5 ☹️☹️☹️
-          </p>
-          <br>
-
-          <p><strong>Link to Gemini Chat:</strong><br>
-          <a href="https://share.gemini.google/G8K6Z9a6JPi8" target="_blank">https://share.gemini.google/G8K6Z9a6JPi8</a></p>
-        </article>
-      </div>
-
-    </main>
-  </div>
+    </div>
+  </main>
 </Layout>
 
 <style>
-  /* Keep Ribbon and Sidebar CSS identical to Dashboard */
+  /* Keep Ribbon CSS identical */
   .steam-ribbon { background-color: var(--steam-header-bg); padding: 1rem 2rem; display: flex; align-items: center; gap: 2rem; border-bottom: 1px solid #2a475e; }
   .nav-arrows a { color: var(--steam-text); font-size: 1.5rem; margin-right: 0.5rem; }
   .nav-arrows .disabled { color: #3a4048; cursor: not-allowed; }
@@ -169,154 +43,49 @@ const entries = [
   .main-nav a { color: var(--steam-text); padding-bottom: 0.5rem; transition: color 0.2s; }
   .main-nav a:hover { color: white; }
   .main-nav a.active { color: var(--steam-blue); border-bottom: 3px solid var(--steam-blue); }
-  .app-layout { display: flex; height: calc(100vh - 70px); }
-  .sidebar { width: 300px; background-color: #2a2d33; padding: 1rem; overflow-y: auto; }
-  .search-bar input { width: 100%; padding: 0.5rem; background: #171a21; border: none; color: white; border-radius: 4px; margin-bottom: 1rem; }
-  .game-list { list-style: none; }
-  .game-list li a { display: block; padding: 0.25rem 0.5rem; font-size: 0.9rem; color: var(--steam-text); }
-  .game-list li a:hover { background: #3a4048; color: white; }
-  .game-list li a.active-game { background: #66c0f4; color: #171a21; font-weight: bold; }
 
-  /* Entry Main Content Area */
-  .entry-content {
-    flex: 1;
-    background: #171a21; /* Slightly darker than library background */
-    overflow-y: auto;
+  /* Background Layout */
+  .profile-background {
+    background: radial-gradient(circle at top center, #222a35 0%, #171a21 100%);
+    min-height: calc(100vh - 70px);
     display: flex;
-    flex-direction: column;
-  }
-
-  /* Header Image with gradient fade */
-  .entry-header {
-    width: 100%;
-    height: 350px;
-    position: relative;
-  }
-  .entry-header img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
-    -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
-  }
-
-  /* Action Bar (Play Button, Date, Score) */
-  .action-bar {
-    display: flex;
-    align-items: center;
-    padding: 1rem 2rem;
-    background: rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(5px);
-    margin-top: -60px; /* Pulls it up over the faded image */
-    z-index: 10;
-    gap: 3rem;
-  }
-
-  .play-btn {
-    background: linear-gradient(to right, #75b022 5%, #588a1b 95%);
-    color: white;
-    padding: 0.8rem 3rem;
-    border-radius: 2px;
-    font-size: 1.2rem;
-    font-weight: 500;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    transition: filter 0.2s;
-  }
-  .play-btn:hover {
-    filter: brightness(1.2);
-    text-decoration: none;
-  }
-  .play-icon { font-size: 1rem; }
-
-  .stat-block {
-    display: flex;
-    flex-direction: column;
-    gap: 0.2rem;
-  }
-  .stat-label {
-    color: #8f98a0;
-    font-size: 0.7rem;
-    letter-spacing: 1px;
-  }
-  .stat-value {
-    color: #c6d4df;
-    font-size: 0.9rem;
-  }
-
-  /* Mini Progress bar for Score */
-  .progress-bar-bg {
-    width: 150px;
-    height: 4px;
-    background: #2a2f35;
-    margin-top: 4px;
-    border-radius: 2px;
-  }
-  .progress-bar-fill {
-    height: 100%;
-    background: #66c0f4;
-    border-radius: 2px;
-  }
-
-  /* Activity / Blog Section */
-  .activity-section {
+    justify-content: center;
     padding: 2rem;
-    max-width: 900px;
   }
 
-  .section-title {
+  .content-container {
+    width: 100%;
+    max-width: 960px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  /* Header Design */
+  .header-banner {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 4px;
+    padding: 2rem;
+  }
+
+  .header-banner h2 {
     color: white;
-    font-size: 1rem;
+    font-size: 2rem;
     font-weight: 400;
-    letter-spacing: 1px;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
   }
 
-  .fake-input {
-    background: #2a2d33;
-    padding: 1rem;
-    border-radius: 4px;
-    margin-bottom: 2rem;
+  .header-banner p {
     color: #8f98a0;
-    font-size: 0.9rem;
-    cursor: text;
   }
 
-  .blog-body {
-    background: #1e2329;
+  /* Blank Canvas Area */
+  .canvas-area {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
     padding: 2rem;
-    border-radius: 4px;
     color: #c6d4df;
-  }
-
-  .blog-body h3 {
-    color: white;
-    font-size: 1.5rem;
-    margin-bottom: 0.2rem;
-  }
-  .post-date {
-    font-size: 0.8rem;
-    color: #8f98a0;
-    margin-bottom: 1.5rem;
-    text-transform: uppercase;
-  }
-
-  .blog-body p {
-    line-height: 1.6;
-    margin-bottom: 1.2rem;
-  }
-  .blog-body a {
-    color: #66c0f4;
-  }
-  .blog-body a:hover {
-    text-decoration: underline;
-  }
-  
-  .blog-body img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 4px;
-    margin: 1rem 0;
+    min-height: 400px;
   }
 </style>
