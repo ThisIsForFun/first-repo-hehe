@@ -5,7 +5,7 @@ import Layout from '../layouts/Layout.astro';
 const entries = [
   { id: 1, title: "Settlers of Catan", thumb: "/colonist thumb.png", link: "/entry-one" },
   { id: 2, title: "Balatro", thumb: "/balatro square.avif", link: "/entry-two" },
-  { id: 3, title: "9 Kings", thumb: "/9 kings thumb", link: "/entry-three" },
+  { id: 3, title: "9 Kings", thumb: "/9 kings thumb.jpg", link: "/entry-three" },
   { id: 4, title: "Final thoughts", thumb: "https://placehold.co/300x450/fcb9b2/333?text=Coming+Soon", link: "/entry-four" },
 ];
 ---
@@ -73,86 +73,101 @@ const entries = [
         </div>
 
         <article class="blog-body">
-         <h3 style="text-align: center;">“Why play against bots when you can BE the bot?”</h3>
-          <h3 style="text-align: center;">Takeaways on Using Gen AI to Beat Players in Settlers of Catan</h3>
+          <h3 style="text-align: center;">“Hark! I see no Kings here, only Jesters”<br>
+          A Write-Up on AI-Coached Strategies for Beating the Game 9 Kings</h3>
           <br>
-          <p class="post-date"; style="text-align: center;">Brought to you by Colonist.io (thats a lie, this isnt sponsored lol)
-          <br>June 30 2026</p>
+          <p class="post-date" style="text-align: center;">July 24, 2026</p>
 
           <p style="text-align: center;">
-            <strong>Game:</strong> Settlers of Catan (Online Version: Colonist.io)<br>
-            <strong>Duration (i.e., Total Rounds):</strong> 6 games, approx. 25 mins each<br>
-            <strong>Target:</strong> Win 1st place in as many games as possible.
+            <strong>Game:</strong> 9 Kings<br>
+            <strong>Duration (i.e., Total Rounds):</strong>2 hours, 5 games<br>
+            <strong>Target:</strong> Beat Level 10 Difficulty.
           </p>
           <br>
 
-          <p>Hello and welcome to my first entry for my individual AI experiment!</p>
+          <p>Today, I am going to be playing the game 9 Kings. Explained by my AI Coach:</p>
 
-          <p>If you heard of my initial ‘Individual AI Experiment’, I decided to change that idea to make it more generally insightful and, at the same time, less labor-intensive. With that, this is my first entry for my individual AI experiment, in which I will now be playing various games with AI assistance. Essentially, of course, I will be using AI as my gaming Coach (we will figure out how that works as we go on).</p>
+          <p><em>“9 Kings is a fast-paced indie deckbuilder where you build a kingdom on a tiny 3x3 grid, draft card synergies, and defend against auto-battler waves.” (AI-generated)</em></p>
 
-          <p>Today’s game is something relatively simple to kick off this series. I selected Settlers of Catan. If you’ve heard of it or played it before, fantastic! If not, you totally should give it a go.</p>
+          <p>If you are familiar with other card/deckbuilder games, a general (but terrible) explanation would be: You have a deck of cards; every turn you draw a couple and use your cards to attack an opponent and score points to win. In the case of 9 Kings, you can play against a real person or against the computer, but instead of a “race to x-points”, the game is tallied by lives (i.e., every round gets harder, and you are given a score when all lives are lost).</p>
 
-          <p>Given the busy schedules of my friends, I decided to use the Colonist web version of the game, so I will be playing with random people.</p>
+          <p>Now, to be honest, whilst I am familiar with the game, it is not my most played (at around 27 hours of total play time). The game, however, was one of my favorites back in 2025, so this is gonna be a fun game to test AI out on.</p>
 
-          <p>For those unfamiliar with the game: <em>“Settlers of Catan is a strategy board game where players trade resources, build roads and settlements, and expand across an island to win points.” (AI-generated)</em></p>
-
-          <p>The game board comprises multiple hexagonal tiles. Each tile represents a particular resource with an assigned number of dice from 2 to 12. Settlements (1 Victory point) allow you to collect resources from the adjacent tiles; Roads allow you to branch off from existing settlements; Cities (1 Victory point) level up to double the amount of resources collected on every dice roll; and Resources can be used to build or trade. Essentially, players want to collect resources to build on their settlements and garner more victory points. Usually, the winner of the game is whoever reaches 10 victory points.</p>
-
-          <p>In this session, I will be playing several games of Catan. In the first round, I will be playing on my own to get a general review of how the game works and with my usual tactics. From game 2 onwards, I will then be using AI (specifically Gemini Pro) to coach my gaming.</p>
+          <p>Similar to the other games, I am going to be playing a couple of runs on my own first before I go on to use Coach G (Gemini Pro). I will not be playing multiplayer, rather single player, so I am again playing against the computer. Similar to the previous games, I decided to set that boundary of not playing against other players, primarily on the basis of fairness. These online players do not know I’m playing with coaching assistance, and neither are they probably using or getting coached by an AI either.</p>
           <br>
 
-          <h3>Gameplay and Warm-Up Rounds</h3>
+          <h3>Warm-up Games</h3>
+          <p>So I played a total of 4 games as a warm-up, King of Nothing on King II Difficulty (i.e., Level 10). In order to “win” a run in 9 kings, you need to make it to 34 “years” (i.e., “years” = rounds). In my test runs, I had made it as far as year 15. King II is currently my hardest unlocked difficulty (difficulty can go up to King XX).</p>
 
-          <p>For the first game (and all other games), I played against 3 other players in Colonist’s Casual lobbies. This queue is for casual players who aren't playing to level up their current game rating (ratings in Colonist are generally used to objectively measure how good a player is and are used to match up players of the same level). Given that I am going to be playing with an AI coach later on, I decided that the Casual lobbies would be most appropriate to play in.</p>
-
-          <p>Game 1 went by rather quickly, with me placing in 3rd out of 4. For this game, I used my usual gaming strategy of focusing on Wheat, Sheep, and Stone resources in hopes of a late-game advantage. Lacking stable sources of Wood and Brick did eventually hinder me, as those resources were necessary for expansion.</p>
-
-          <p>Before this session, my win rate was at 15% (pathetic, I know!) and ranked at Silver II with a rating of 1324.</p>
-
-          <div style="text-align: center;">
-          <img src="/colonist old win rate.png" alt="Old Win Rate" />
-          </div>
-          <br>
-
-          <h3>AI-Coached Rounds</h3>
-
-          <p>My main prompts for Gemini were mainly on Settlement placement. At the beginning of the game, each player is given the chance to put down two starting settlements on the board in a particular order. Where you place your starting settlements is important, as the adjacent resource tiles will be your sources for the majority of the game.</p>
-
-          <p>Picking an advantageous spot requires considering the variety of your resources available, as well as the probability of that respective tile number being rolled.</p>
-
-          <p>As I prompted Gemini to provide me with ideal options on where to place my settlements, I would upload an image of the board. The AI would often misread the image, sometimes wrongfully assuming particular tile resource types.</p>
-
-          <p>Out of the games I played with an AI coach, I won 4. While Coach G (Gemini) would often misread images, it did slowly show me the mathematical logic behind how it recommends particular locations as ideal. Slowly, I began to predict the locations it would recommend. The number of my prompts lowered to around 2-3 every game, mostly consisting of placement recommendations, trade-offs for particular Development cards, and recaps when I would lose a game (to incorporate the turnout/hinderances in the next recommendations).</p>
+          <p>In these runs, I used my usual strategies with my Castle in the backline, perks focused on my troops/paladins, and strategically placed blacksmiths to buff said troops. Since it has been a while since I’d played, I definitely used the first two runs to get familiar with the game again, then the next 2 trying to actually win. Obviously, I didn't exactly achieve that as I “died” by Year 15.</p>
           <br>
 
           <div style="text-align: center;">
-          <img src="/colonist game 2 win.png" alt="Game 2 Win"/>
-          <h4>Game 2 (win)</h4>
+            <video width="100%" style="max-width: 800px; border-radius: 8px;" controls>
+              <source src="/9 Kings Gameplay sped up 1.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+            <h4>Gameplay of my warmup rounds</h4>
           </div>
+          <br>
+
+          <h3>Coach G’s Strats</h3>
+          <p>Similar to my last entries, I started the conversation with a simple prompt:</p>
+
+          <blockquote style="border-left: 4px solid var(--steam-blue, #66c0f4); background: rgba(0,0,0,0.2); padding: 1rem; margin: 1rem 0; font-style: italic;">
+            "I am going to play a run on 9 kings. The run is going to be with King of Nothing, on Difficulty: King II. Give me strategies to win this run and make it past year 34."
+          </blockquote>
+
+          <p>Keeping it simple, I gave the Context-Conditions-Goal kind of prompt, then attached specifics:</p>
+
+          <blockquote style="border-left: 4px solid var(--steam-blue, #66c0f4); background: rgba(0,0,0,0.2); padding: 1rem; margin: 1rem 0; font-style: italic;">
+            "Additionally, give me tips on what perks to use (and order of selection) as well as what troops/towers/stretegies will get me past year 34."
+          </blockquote>
+
+          <p>To keep it simple, Gemini then responded in kind, giving me a breakdown of Perks (i.e., pre-run buffs you can select–think of them as medals you get from previous games, but they have a benefit for the next run) to prioritize, grid layout (i.e., what troup/building to put and where), and general strategies for cards to try to get, prioritize, and use. In the game, you are also pitted against other Kings (each king has a different ‘load-out’ or deck of cards), so Coach G also gave me a heads-up on what Kings to watch out for.</p>
+
+          <p>After a couple of follow-up questions, I was ready to play. Now, informed on what strategies to play out and what to keep in mind, I started my first game.</p>
+          <br>
+
+          <h3>Post AI-Assisted Gaming Session</h3>
+          <div style="text-align: center;">
+          <img src="/9 Kings screenshot.png" alt="9 kings new record" />
+          <h4>9 Kings New Record</h4>
+          </div>
+
+          <p>I played one game. Total run time was 1 hour and 27 minutes. 78 years survived. What the fishsticks?!?! (I didn’t play another run after that).</p>
           <br>
 
           <h3>HOW DID THIS MAKE ME FEEL??</h3>
           <p style="font-size: 0.9rem; color: #8f98a0;"><em>(skip to this part if you are bored with the gaming terminology)</em></p>
 
-          <p>Playing the game with Gemini was an interesting experience. While I had learned several new strategies on how to play the game, there definitely were a couple of downsides to working with an AI coach.</p>
+          <p>To those who have older siblings, do you remember playing games as a kid and just getting wrecked by said older siblings when you would play with them? Like, the genuine feeling of being humbled so bad that you just think: “they must be cheating!” or “they have GOT to know something I don't know!” That was honestly my reaction to playing this one game.</p>
 
-          <p>Firstly, going back and forth to consult with Gemini between my turns was a bit hectic. Especially when I would be playing faster-paced players, an additional step of coordinating with the AI definitely added stress and deducted time from my limited seconds count. You would think that with the AI, thinking would be more efficient, but it actually felt like the opposite. The added steps of screenshots and typing, just to get the answer you were already thinking, definitely heightened my perceived intensity of the game.</p>
+          <p>Now, I can already hear it through the screen–” Obviously you would win. You had an AI coaching you!”. And whilst that is true, I would just like to reiterate that I only asked for initial strategies at the beginning of the run. In between Years (rounds), I did not prompt any additional questions to help me make decisions or ask how to get me out of pinches.</p>
 
-          <p>Additionally, the distraction that comes with coordinating with the AI decreased my overall enjoyment of the game. The more time I spent prompting and clarifying suggestions meant less time focusing on the game itself. In the first few games, I was prompting more often between turns, so I felt like the executor of the AI’s intentions, rather than a player of the game in my own right. In the latter games, however, I decided to prompt less and trust my own instincts more.</p>
+          <p>Taking the actual strategies and winning out of the question, I think the main aspect that surprised me is just how vastly more successful my run was after learning from the AI exchange. Halfway through this run, I was honestly very pleasantly surprised with how well the run was going, but as we hit the 45-minute mark, I just started to be in disbelief (and not in the good way).</p>
 
-          <p>In conclusion, Gemini did teach me a couple of new strategies that I wasn't aware of, which I’ll definitely keep in mind for future games. However, going from a 15% to an 80% win rate means relatively little to me if it means I get to enjoy the game less. Overall, playing Settlers of Catan with Coach G is in the same category as bungee jumping for me; you try it once and never do it again.</p>
+          <p>All I could think was, “there’s no way this works so well” because the strategy didn’t feel vastly more revolutionary than my original playing style. I was so taken aback by how good it worked that I played one game and left it at that. Maybe, had I played another run (maybe at a greater difficulty too), I would have begun to notice the nuances of every decision and how it compounds, but post-game 1, I was done.</p>
+
+          <p>The game suddenly didn't feel so interesting or rewarding, and I am not entirely sure if that stems from the robustness of the Gen AI assessment of the game itself, or if the game itself is that easily solvable.</p>
+
+          <p>Interestingly, however, it was nice to learn of the core strategy to complete that level of difficulty. Is it the only strategy that would have worked? Probably not. But having Coach G tell me what to target and how to get there makes me think I saved another 10 hours trying to be the same level, had I done it on my own.</p>
+
+          <p>Overall, I have mixed feelings on playing this game with Gen AI coaching me. On one side, I learned some new strategies and nuances of the game that I didn’t know before. But on the other hand, maybe I would have enjoyed figuring out those answers, had I played it on my own.</p>
+
+          <p>It would have taken way more time, sure. But possibly those additional runs would have been more engaging than playing the game with the answers in hand and just mindlessly clicking and waiting for it to be over.</p>
           <br>
 
           <h3>THE VERDICT</h3>
           <br>
           <p>
-            <strong>Strategies Learned:</strong> 4/5 🏆🏆🏆🏆 
-            <br><strong>Happiness rating while playing the game:</strong> 3/5 ☹️☹️☹️
+            <strong>Game Strategies Learned:</strong> 4/5 ⭐⭐⭐⭐<br>
+            <strong>Gaming Satisfaction and Impact:</strong> 2/5 ☹️☹️
           </p>
           <br>
 
           <p><strong>Link to Gemini Chat:</strong><br>
-          <a href="https://share.gemini.google/G8K6Z9a6JPi8" target="_blank">https://share.gemini.google/G8K6Z9a6JPi8</a></p>
+          <a href="https://share.gemini.google/b3N9F0OUxb9J" target="_blank">https://share.gemini.google/b3N9F0OUxb9J</a></p>
         </article>
       </div>
 
