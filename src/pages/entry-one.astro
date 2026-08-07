@@ -52,12 +52,12 @@ const entries = [
 
         <div class="stat-block">
           <span class="stat-label">CLOUD STATUS</span>
-          <span class="stat-value">Published July 10, 2026</span>
+          <span class="stat-value">Published June 30, 2026</span>
         </div>
 
         <div class="stat-block">
           <span class="stat-label">ACHIEVEMENTS</span>
-          <span class="stat-value">Score: 9/10</span>
+          <span class="stat-value">Score: 8/10</span>
           <div class="progress-bar-bg">
             <div class="progress-bar-fill" style="width: 90%;"></div>
           </div>
@@ -69,20 +69,83 @@ const entries = [
         <h2 class="section-title">ACTIVITY</h2>
         
         <div class="fake-input">
-          <p>Say something about this entry to your friends...</p>
+          <p>Ever heard of the game Settlers of Catan? It's fun...</p>
         </div>
 
         <article class="blog-body">
-          <h3>The Beginning of the End</h3>
-          <p class="post-date">July 10</p>
-          
-          <p>This is where you write your actual blog post! Because you are writing in HTML, you can structure this however you want.</p>
-          
-          <p>You can add paragraphs, insert <a href="#">links</a>, or even drop more images directly into your text like this:</p>
-          
-          <img src="https://placehold.co/600x300/2a475e/fff?text=In-text+Image" alt="Post detail" />
-          
-          <p>The layout mimics the Steam news feed, giving it that perfect desktop app feel while still being highly readable.</p>
+         <h3>“Why play against bots when you can BE the bot?”</h3>
+          <h4>Takeaways on Using Gen AI to Beat Players in Settlers of Catan</h4>
+          <p><em>Brought to you by Colonist.io (thats a lie, this isnt sponsored lol)</em></p>
+          <p class="post-date">June 30 2026</p>
+
+          <ul>
+            <li><strong>Game:</strong> Settlers of Catan (Online Version: Colonist.io)</li>
+            <li><strong>Duration (i.e., Total Rounds):</strong> 6 games, approx. 25 mins each</li>
+            <li><strong>Target:</strong> Win 1st place in as many games as possible.</li>
+          </ul>
+          <br>
+
+          <p>Hello and welcome to my first entry for my individual AI experiment!</p>
+
+          <p>If you heard of my initial ‘Individual AI Experiment’, I decided to change that idea to make it more generally insightful and, at the same time, less labor-intensive. With that, this is my first entry for my individual AI experiment, in which I will now be playing various games with AI assistance. Essentially, of course, I will be using AI as my gaming Coach (we will figure out how that works as we go on).</p>
+
+          <p>Today’s game is something relatively simple to kick off this series. I selected Settlers of Catan. If you’ve heard of it or played it before, fantastic! If not, you totally should give it a go.</p>
+
+          <p>Given the busy schedules of my friends, I decided to use the Colonist web version of the game, so I will be playing with random people.</p>
+
+          <p>For those unfamiliar with the game: <em>“Settlers of Catan is a strategy board game where players trade resources, build roads and settlements, and expand across an island to win points.” (AI-generated)</em></p>
+
+          <p>The game board comprises multiple hexagonal tiles. Each tile represents a particular resource with an assigned number of dice from 2 to 12. Settlements (1 Victory point) allow you to collect resources from the adjacent tiles; Roads allow you to branch off from existing settlements; Cities (1 Victory point) level up to double the amount of resources collected on every dice roll; and Resources can be used to build or trade. Essentially, players want to collect resources to build on their settlements and garner more victory points. Usually, the winner of the game is whoever reaches 10 victory points.</p>
+
+          <p>In this session, I will be playing several games of Catan. In the first round, I will be playing on my own to get a general review of how the game works and with my usual tactics. From game 2 onwards, I will then be using AI (specifically Gemini Pro) to coach my gaming.</p>
+          <br>
+
+          <h3>Gameplay and Warm-Up Rounds</h3>
+
+          <p>For the first game (and all other games), I played against 3 other players in Colonist’s Casual lobbies. This queue is for casual players who aren't playing to level up their current game rating (ratings in Colonist are generally used to objectively measure how good a player is and are used to match up players of the same level). Given that I am going to be playing with an AI coach later on, I decided that the Casual lobbies would be most appropriate to play in.</p>
+
+          <p>Game 1 went by rather quickly, with me placing in 3rd out of 4. For this game, I used my usual gaming strategy of focusing on Wheat, Sheep, and Stone resources in hopes of a late-game advantage. Lacking stable sources of Wood and Brick did eventually hinder me, as those resources were necessary for expansion.</p>
+
+          <p>Before this session, my win rate was at 15% (pathetic, I know!) and ranked at Silver II with a rating of 1324.</p>
+          <br>
+
+          <img src="/colonist old win rate win.png"/>
+          <h3>AI-Coached Rounds</h3>
+
+          <p>My main prompts for Gemini were mainly on Settlement placement. At the beginning of the game, each player is given the chance to put down two starting settlements on the board in a particular order. Where you place your starting settlements is important, as the adjacent resource tiles will be your sources for the majority of the game.</p>
+
+          <p>Picking an advantageous spot requires considering the variety of your resources available, as well as the probability of that respective tile number being rolled.</p>
+
+          <p>As I prompted Gemini to provide me with ideal options on where to place my settlements, I would upload an image of the board. The AI would often misread the image, sometimes wrongfully assuming particular tile resource types.</p>
+
+          <p>Out of the games I played with an AI coach, I won 4. While Coach G (Gemini) would often misread images, it did slowly show me the mathematical logic behind how it recommends particular locations as ideal. Slowly, I began to predict the locations it would recommend. The number of my prompts lowered to around 2-3 every game, mostly consisting of placement recommendations, trade-offs for particular Development cards, and recaps when I would lose a game (to incorporate the turnout/hinderances in the next recommendations).</p>
+          <br>
+
+          <img src="/colonist game 2 win.png"/>
+          <h4>Game 2 (win)</h4>
+          <br>
+
+          <h3>HOW DID THIS MAKE ME FEEL??</h3>
+          <p style="font-size: 0.9rem; color: #8f98a0;"><em>(skip to this part if you are bored with the gaming terminology)</em></p>
+
+          <p>Playing the game with Gemini was an interesting experience. While I had learned several new strategies on how to play the game, there definitely were a couple of downsides to working with an AI coach.</p>
+
+          <p>Firstly, going back and forth to consult with Gemini between my turns was a bit hectic. Especially when I would be playing faster-paced players, an additional step of coordinating with the AI definitely added stress and deducted time from my limited seconds count. You would think that with the AI, thinking would be more efficient, but it actually felt like the opposite. The added steps of screenshots and typing, just to get the answer you were already thinking, definitely heightened my perceived intensity of the game.</p>
+
+          <p>Additionally, the distraction that comes with coordinating with the AI decreased my overall enjoyment of the game. The more time I spent prompting and clarifying suggestions meant less time focusing on the game itself. In the first few games, I was prompting more often between turns, so I felt like the executor of the AI’s intentions, rather than a player of the game in my own right. In the latter games, however, I decided to prompt less and trust my own instincts more.</p>
+
+          <p>In conclusion, Gemini did teach me a couple of new strategies that I wasn't aware of, which I’ll definitely keep in mind for future games. However, going from a 15% to an 80% win rate means relatively little to me if it means I get to enjoy the game less. Overall, playing Settlers of Catan with Coach G is in the same category as bungee jumping for me; you try it once and never do it again.</p>
+          <br>
+
+          <h3>THE VERDICT</h3>
+          <ul>
+            <li><strong>Strategies Learned:</strong> 🏆🏆🏆🏆 (4/5)</li>
+            <li><strong>Happiness Rating while playing the game:</strong> ☹️☹️☹️ (3/5)</li>
+          </ul>
+          <br>
+
+          <p><strong>Link to Gemini Chat:</strong><br>
+          <a href="https://share.gemini.google/G8K6Z9a6JPi8" target="_blank">https://share.gemini.google/G8K6Z9a6JPi8</a></p>
         </article>
       </div>
 
