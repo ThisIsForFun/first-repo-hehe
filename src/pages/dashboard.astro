@@ -155,6 +155,8 @@ const entries = [
   .game-card img {
     width: 100%;
     border-radius: 4px;
+    aspect-ratio: 2 / 3;   /* Forces the tall rectangle shape */
+    object-fit: cover;     /* Crops perfectly without squishing */
   }
 
   .game-card:hover {
