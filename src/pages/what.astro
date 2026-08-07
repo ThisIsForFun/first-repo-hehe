@@ -2,43 +2,47 @@
 import Layout from '../layouts/Layout.astro';
 
 // Your Recent Activity Database
-// Mix your new blog entries and upcoming games here
+// Updated to show your 4 entries in reverse chronological order!
 const recentActivity = [
   {
-    type: "Upcoming Game Added",
+    id: 4,
+    title: "Final Thoughts",
+    thumb: "https://placehold.co/460x215/171a21/e5e5e5?text=Final%5CnThoughts&font=Montserrat", 
+    link: "/entry-four",
+    statValue: "30 Jul",
+    statLabel: "Status",
+    type: "Experiment Concluded",
+    progress: "100%"
+  },
+  {
+    id: 3,
+    title: "9 Kings",
+    thumb: "/9 kings header.jfif", 
+    link: "/entry-three",
+    statValue: "24 Jul",
+    statLabel: "Played",
+    type: "78 Years Survived",
+    progress: "100%"
+  },
+  {
+    id: 2,
     title: "Balatro",
     thumb: "/balatro thumb 2.webp",
-    statLabel: "Status",
-    statValue: "To Play", // Current date vibe!
-    progress: "0%",
-    link: "/upcoming"
+    link: "/entry-two",
+    statValue: "10 Jul",
+    statLabel: "Played",
+    type: "High Score: 7,902,996",
+    progress: "100%"
   },
   {
-    type: "New Entry",
+    id: 1,
     title: "Settlers of Catan",
-    thumb: "/colonist header.webp",
-    statLabel: "Published on",
-    statValue: "8 Jul", // Current date vibe!
-    progress: "100%",
-    link: "/entry-one"
-  },
-  {
-    type: "Upcoming Game Added",
-    title: "Slay the Princess",
-    thumb: "/slay the princess upcoming.avif",
-    statLabel: "Status",
-    statValue: "To Play",
-    progress: "0%",
-    link: "/upcoming"
-  },
-  {
-    type: "Upcoming Game Added",
-    title: "Codenames",
-    thumb: "/codenames upcoming.jpg",
-    statLabel: "Status",
-    statValue: "To Play",
-    progress: "0%",
-    link: "/upcoming"
+    thumb: "/colonist header.webp", 
+    link: "/entry-one",
+    statValue: "30 Jun",
+    statLabel: "Played",
+    type: "80% Win Rate",
+    progress: "100%"
   }
 ];
 ---
