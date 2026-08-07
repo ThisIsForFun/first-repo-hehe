@@ -1,0 +1,331 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+// We keep the entries list here so the left sidebar keeps working!
+const entries = [
+  { id: 1, title: "Settlers of Catan", thumb: "/game-cover.jpg", link: "/project-one" },
+  { id: 2, title: "Two", thumb: "/another-image.jpg", link: "#" },
+  { id: 3, title: "Three", thumb: "/third-image.png", link: "#" },
+  { id: 4, title: "Four", thumb: "https://placehold.co/300x450/fcb9b2/333?text=Cover+4", link: "#" },
+];
+---
+
+<Layout title="LIBRARY | Project One">
+  <header class="steam-ribbon">
+    <div class="nav-arrows">
+      <a href="/dashboard">&larr;</a>
+      <a href="#" class="disabled">&rarr;</a>
+    </div>
+    <nav class="main-nav">
+      <a href="/upcoming">UPCOMING</a>
+      <a href="/dashboard" class="active">PLAYED</a>
+      <a href="/what">WHAT ARE WE DOING HERE AGAIN?</a>
+      <a href="/side">*Side Stories*</a>
+    </nav>
+  </header>
+
+  <div class="app-layout">
+    
+    <aside class="sidebar">
+      <div class="search-bar">
+        <input type="text" placeholder="Search..." />
+      </div>
+      <ul class="game-list">
+        {entries.map((entry) => (
+          // We add a little logic here: if the link matches this page, highlight it!
+          <li><a href={entry.link} class={entry.link === "/project-one" ? "active-game" : ""}>{entry.title}</a></li>
+        ))}
+      </ul>
+    </aside>
+
+    <main class="entry-content">
+      
+      <div class="entry-header">
+        <img src="/balatro header.jpg" alt="Header" class="hero-bg" />
+      </div>
+
+      <div class="action-bar">
+        
+        <a href="https://colonist.io/" target="_blank" class="play-btn">
+          <span class="play-icon">▶</span> PLAY
+        </a>
+
+        <div class="stat-block">
+          <span class="stat-label">CLOUD STATUS</span>
+          <span class="stat-value">Published July 10, 2026</span>
+        </div>
+
+        <div class="stat-block">
+          <span class="stat-label">ACHIEVEMENTS</span>
+          <span class="stat-value">Score: 9/10</span>
+          <div class="progress-bar-bg">
+            <div class="progress-bar-fill" style="width: 90%;"></div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="activity-section">
+        <h2 class="section-title">ACTIVITY</h2>
+        
+        <div class="fake-input">
+          <p>Think Poker, but make it 5x more complicated...</p>
+        </div>
+
+        <article class="blog-body">
+         <h3 style="text-align: center;">“I couldn’t learn how to count cards from Gemini, so I decided to play a different card game instead”</h3>
+          <h3 style="text-align: center;">Insights on How High Gemini Can Get Me (In Balatro!)</h3>
+          <br>
+          <p class="post-date"; style="text-align: center;">July 10, 2026</p>
+
+          <p style="text-align: center;">
+            <strong>Game:</strong> Balatro (Online Version: Colonist.io)<br>
+            <strong>Duration (i.e., Total Rounds):</strong> 1.5 hours, 5 games<br>
+            <strong>Target:</strong> Try to beat my previous highest score.
+          </p>
+          <br>
+
+          <p>In this session, I played a widely beloved game called Balatro. For all those wondering what kind of game Balatro is, think of Poker with math, wildcards, and a more complex hand-ranking system.</p>
+
+          <p><em>Gemini says, “Balatro is a roguelike deck-builder where you play illegal poker hands, discover game-breaking Jokers, and build wild combos to beat huge scores!” (AI-generated)</em></p>
+
+          <p>Essentially, in the game, each card from the deck of 52 has its respective value (2-11). In every round, the score of each hand played is the total value of the cards, multiplied by a multiplier. This multiplier increases with the rarity of the hand (i.e., a singles hand has a multiplier of 1 and a straight flush has a multiplier of 8). As you play the game, each round has a score that you need to beat within 5 hands. As you progress, that score gets higher and higher, so to keep up with this inflation, you can collect a variety of cards that will increase your base card values, multiplier, or give you different buffs.</p>
+          <br>
+
+          <h3>Warm-up Games</h3>
+          <p>To get this experiment started, I played two games on my own. Both games were played on the Red Deck (Basic deck presets, meaning no extra starting buffs or game conditions) and on base difficulty. My general strategies would be using Flush and Two Pair hands to balance out higher multipliers and high drawing probability.</p>
+
+          <p>My first game was a total bust, not even making it past the 5th Ante. To “win” a run, you need to make it past the 8th Ante. Each Ante comprises 3 rounds. After Ante 8, the game will go into endless mode where you can try to best your previous highest scores. Before this session, my highest score recorded on my account was 1,003,117. I got this score mainly playing two Pair hands, successfully beating 24 rounds.</p>
+          <br>
+
+          <div style="text-align: center;"><img src="/balatro old record.png" alt="Balatro Old Record" /></div><br>
+
+          <p>I had approximately 31 hours of play time recorded on Balatro, disregarding the hours spent playing the app version on my phone (yes, I liked the game so much that I bought it to play it on my phone too).</p>
+          <br>
+
+          <h3>Gemini’s Words of Wisdom</h3>
+          <p>To prompt Gemini, I started with a simple prompt:</p>
+
+          <blockquote style="border-left: 4px solid var(--steam-blue, #66c0f4); background: rgba(0,0,0,0.2); padding: 1rem; margin: 1rem 0; font-style: italic;">
+            "I am now playing a new game called balatro. I am starting a new run with the Red Deck (+1 discard every round) with White Stake (base difficulty)<br><br>
+            I want you to be my personal coach on strategies and how should I play this run. Give me the top 5 strategies to prioritize in this run"
+          </blockquote>
+
+          <p>In response to my prompt, Coach G gave me exactly what I asked: 5 general strategies to keep in mind and what techniques to use when playing the game.</p>
+
+          <p>Remembering how I played Catan with an AI coach, I took a more thorough approach in using Gen AI. At every decision point for this first game, I prompted Gemini, providing it context (whether verbatim or with a screenshot of the game screen) and asking what to do next. This game was the longest game of the night, taking me 40 minutes to reach Ante 8, where I lost.</p>
+
+          <p>Gemini kind of bothered me in this first game. Half the time, I had to correct the AI as it was reading images wrong and getting wildcard abilities mixed up (e.g., telling me to pick a particular card when it was referring to another one, based on the description of what it was targeting).</p>
+
+          <p>After this game, however, I realized this approach was unnecessary and overkill. Way too tired of the inefficient back and forth, I realized that some questions were actually not hard to figure out when knowing the main strategies and tactics for the run.</p>
+          <br>
+
+          <h3>Game 2 and 3</h3>
+          <p>In this second game, I dropped the constant prompting and decided to limit my inquiries to the Setup (pre-game rundown of main strategies), follow-up clarifications, and half-time check-in.</p>
+
+          <p>During the setup, I recapped what went wrong and the major obstacles in the last game. To pivot from my previous approaches, I decided to prompt on what the current Meta strategies are lately (i.e., these are currently dominant, most effective tactics used by the community to win).</p>
+
+          <p>This prompt was a gold mine. Apparently, Balatro currently does have a meta strategy that goes against intuition, and that is using High Card Hands. If done correctly, and paired with the right Jokers and Wildcards, playing High Card Hands eliminates the risk of “bad hands” as every card drawn can be played alone. With this Meta strategy in mind, I was able to successfully win in Game 2, but lost shortly after, making it to Ante 9 and losing on my 22nd round.</p>
+
+          <p>It was in Game 3 that I had gotten the hang of the gist of how executing the High Card playing style was meant to go.</p>
+
+          <p>In this game, I had only prompted Gemini 3 times; all before even starting the 1st round. My first prompt contained the results of Game 2, accounting for what caused me to lose last time. The second prompt ordered a list of 10 strategies to do in chronological order, according to the phases of the game. And the third prompt was just to refine the game plan to account for a minor discrepancy in the generated output.</p>
+          <br>
+
+          
+          <div style="text-align: center;"><img src="/balatro new record.png" alt="Balatro New Record" /></div><br>
+
+          <p>It was only in this run that I was successfully able to trump my last highest score, ending the Ante 11 and successfully completing 28 rounds. Though, keeping in mind the Meta strategy, there were some rounds that I had to purely rely on my intuition and see what works to eventually reach a high score of 7,902,996. After the first 5 rounds, I quickly abandoned the step-by-step chronological list of things to do that I had Gemini generate and decided to go with my gut.</p>
+          <br>
+
+          <h3>HOW DID THIS MAKE ME FEEL??</h3>
+          <p style="font-size: 0.9rem; color: #8f98a0;"><em>(skip to this part if you are bored with the gaming terminology)</em></p>
+
+          <p>Overall, playing Balatro with an AI coach made me conflicted. Out of the 3 games, the first two hardly got close to my previous score, whilst it was my 3rd run where I was able to set a new record-breaking high.</p>
+
+          <p>Looking back at it, I know am unsure if I can totally claim responsibility for this new score. While yes, I did use AI, is it much different than if I had just gone on Reddit and looked for the Meta strategy to the game myself? While Gemini is vastly intelligent, playing the game still faces the player with probability. And unlike other more ‘solved games’, Balatro was designed with layers upon layers of probability, not just limited to what card you draw every turn but also in every generated Boss round obstacle you encounter (e.g., card debuffs, score values) and the available wildcards you are presented with and select.</p>
+
+          <p>At the gist of it, even if I had prompted AI and taken into account its suggestions, what weight do I hold as the one who made the final decisions and choices?</p>
+
+          <p><em>(whoa that felt kinda profound… too much computer for the night, better to revisit this in the morning!)</em></p>
+          <br>
+
+          <h3>THE VERDICT</h3>
+          <ul>
+            <li><strong>AI-Micromanager:</strong> 😑😑.5 (2.5/5)</li>
+            <li><strong>Meta Strategy:</strong> 🤯🤯🤯🤯 (4/5)</li>
+          </ul>
+          <br>
+
+          <p><strong>Link to Gemini Chat:</strong><br>
+          <a href="https://share.gemini.google/G8K6Z9a6JPi8" target="_blank">https://share.gemini.google/G8K6Z9a6JPi8</a></p>
+
+          <p><strong>Link to Gemini Chat:</strong><br>
+          <a href="https://share.gemini.google/G8K6Z9a6JPi8" target="_blank">https://share.gemini.google/G8K6Z9a6JPi8</a></p>
+        </article>
+      </div>
+
+    </main>
+  </div>
+</Layout>
+
+<style>
+  /* Keep Ribbon and Sidebar CSS identical to Dashboard */
+  .steam-ribbon { background-color: var(--steam-header-bg); padding: 1rem 2rem; display: flex; align-items: center; gap: 2rem; border-bottom: 1px solid #2a475e; }
+  .nav-arrows a { color: var(--steam-text); font-size: 1.5rem; margin-right: 0.5rem; }
+  .nav-arrows .disabled { color: #3a4048; cursor: not-allowed; }
+  .main-nav { display: flex; gap: 2rem; font-size: 1.1rem; font-weight: 500; }
+  .main-nav a { color: var(--steam-text); padding-bottom: 0.5rem; transition: color 0.2s; }
+  .main-nav a:hover { color: white; }
+  .main-nav a.active { color: var(--steam-blue); border-bottom: 3px solid var(--steam-blue); }
+  .app-layout { display: flex; height: calc(100vh - 70px); }
+  .sidebar { width: 300px; background-color: #2a2d33; padding: 1rem; overflow-y: auto; }
+  .search-bar input { width: 100%; padding: 0.5rem; background: #171a21; border: none; color: white; border-radius: 4px; margin-bottom: 1rem; }
+  .game-list { list-style: none; }
+  .game-list li a { display: block; padding: 0.25rem 0.5rem; font-size: 0.9rem; color: var(--steam-text); }
+  .game-list li a:hover { background: #3a4048; color: white; }
+  .game-list li a.active-game { background: #66c0f4; color: #171a21; font-weight: bold; }
+
+  /* Entry Main Content Area */
+  .entry-content {
+    flex: 1;
+    background: #171a21; /* Slightly darker than library background */
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Header Image with gradient fade */
+  .entry-header {
+    width: 100%;
+    height: 350px;
+    position: relative;
+  }
+  .entry-header img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+  }
+
+  /* Action Bar (Play Button, Date, Score) */
+  .action-bar {
+    display: flex;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(5px);
+    margin-top: -60px; /* Pulls it up over the faded image */
+    z-index: 10;
+    gap: 3rem;
+  }
+
+  .play-btn {
+    background: linear-gradient(to right, #75b022 5%, #588a1b 95%);
+    color: white;
+    padding: 0.8rem 3rem;
+    border-radius: 2px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: filter 0.2s;
+  }
+  .play-btn:hover {
+    filter: brightness(1.2);
+    text-decoration: none;
+  }
+  .play-icon { font-size: 1rem; }
+
+  .stat-block {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+  .stat-label {
+    color: #8f98a0;
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+  }
+  .stat-value {
+    color: #c6d4df;
+    font-size: 0.9rem;
+  }
+
+  /* Mini Progress bar for Score */
+  .progress-bar-bg {
+    width: 150px;
+    height: 4px;
+    background: #2a2f35;
+    margin-top: 4px;
+    border-radius: 2px;
+  }
+  .progress-bar-fill {
+    height: 100%;
+    background: #66c0f4;
+    border-radius: 2px;
+  }
+
+  /* Activity / Blog Section */
+  .activity-section {
+    padding: 2rem;
+    max-width: 900px;
+  }
+
+  .section-title {
+    color: white;
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+  }
+
+  .fake-input {
+    background: #2a2d33;
+    padding: 1rem;
+    border-radius: 4px;
+    margin-bottom: 2rem;
+    color: #8f98a0;
+    font-size: 0.9rem;
+    cursor: text;
+  }
+
+  .blog-body {
+    background: #1e2329;
+    padding: 2rem;
+    border-radius: 4px;
+    color: #c6d4df;
+  }
+
+  .blog-body h3 {
+    color: white;
+    font-size: 1.5rem;
+    margin-bottom: 0.2rem;
+  }
+  .post-date {
+    font-size: 0.8rem;
+    color: #8f98a0;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+  }
+
+  .blog-body p {
+    line-height: 1.6;
+    margin-bottom: 1.2rem;
+  }
+  .blog-body a {
+    color: #66c0f4;
+  }
+  .blog-body a:hover {
+    text-decoration: underline;
+  }
+  
+  .blog-body img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin: 1rem 0;
+  }
+</style>
